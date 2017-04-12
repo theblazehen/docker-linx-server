@@ -4,7 +4,7 @@ VOLUME ["/data"]
 
 ENV bind=0.0.0.0:8080
 ENV sitename="Linx server"
-ENV siteurl
+ENV siteurl="http://example.com"
 ENV filespath="/data/files"
 ENV metapath="/data/meta"
 
