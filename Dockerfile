@@ -14,7 +14,6 @@ RUN set -ex \
         && apk del .build-deps \
         && mkdir -p /data/{files,meta}
 
-COPY config.ini /data/config/config.ini
 
 EXPOSE 8080
 ENTRYPOINT ["/go/bin/linx-server", "-bind", $bind, "-sitename", $sitename, "-siteurl", $siteurl, "-filespath", $filespath, "-metapath", $metapath, "-allowhotlink", "-nologs", "-realip"]
