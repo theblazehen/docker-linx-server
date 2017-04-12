@@ -16,5 +16,5 @@ RUN set -ex \
 
 
 EXPOSE 8080
-CMD ["/go/bin/linx-server", "-bind", $bind, "-sitename", $sitename, "-siteurl", $siteurl, "-filespath", $filespath, "-metapath", $metapath, "-allowhotlink", "-nologs", "-realip"]
+CMD "/go/bin/linx-server" "-bind" $bind "-sitename" $sitename "-siteurl" $siteurl "-filespath" $filespath "-metapath" $metapath "-allowhotlink" "-nologs" "-realip"
 
