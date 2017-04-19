@@ -7,6 +7,7 @@ ENV sitename="Linx server"
 ENV siteurl="http://example.com"
 ENV filespath="/data/files"
 ENV metapath="/data/meta"
+ENV authfile=""
 
 RUN set -ex \
         && apk add --no-cache --virtual .build-deps git mercurial \
@@ -16,5 +17,5 @@ RUN set -ex \
 
 
 EXPOSE 8080
-CMD "/go/bin/linx-server" "-bind" $bind "-sitename" $sitename "-siteurl" $siteurl "-filespath" $filespath "-metapath" $metapath "-allowhotlink" "-nologs" "-realip"
+CMD "/go/bin/linx-server" "-bind" $bind "-sitename" $sitename "-siteurl" $siteurl "-filespath" $filespath "-metapath" $metapath "-allowhotlink" "-nologs" "-realip" $([ $authfile != "" ] && echo -authfile $authfile)
 
